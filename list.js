@@ -10,11 +10,27 @@ class Node {
 class List {
   constructor () {
     this.head = null
+    this.tail = null
   }
 // just a reference, not nested
   add (node) {
-    node.next = this.head
-    this.head = node
+    if (this.head) {
+      this.tail.next = node
+      this.tail = node
+    } else {
+      this.head = node
+      this.tail = node
+    }
+    // if (this.head) {
+    //   let current = this.head
+    //   while (current.next) {
+    //     current = current.next
+    //   }
+    //   current.next = node
+    // } else {
+    //   this.head = node
+    // }
+    // // node.next = this.head
   }
 }
 
