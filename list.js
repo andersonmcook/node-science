@@ -6,13 +6,12 @@ class Node {
     this.next = null
   }
 }
-//singly-linked list
+
 class List {
   constructor () {
     this.head = null
     this.tail = null
   }
-// just a reference, not nested
 
   addHead (node) {
     this.tail = this.tail || node
@@ -26,28 +25,46 @@ class List {
     } else {
       this.head = node
     }
+
     this.tail = node
   }
 
   removeTail () {
     let current = this.head
+
     while (current.next !== this.tail) {
       current = current.next
     }
+
     current.next = null
     this.tail = current
   }
 
   removeHead () {
     this.head = this.head.next
+
+    if (!this.head) {
+      this.tail = null
+    }
+  }
+
+  get (index) {
+    let current = this.head
+
+    while (index > 0) {
+      current = current.next
+      index--
+    }
+
+    return current
   }
 }
 
 const list = new List
-list.addHead(new Node('A'))
-list.addHead(new Node('B'))
-list.addHead(new Node('C'))
-list.addHead(new Node('D'))
-list.addHead(new Node('E'))
-list.addHead(new Node('F'))
-console.log('first item in the list', list);
+list.addTail(new Node('A'))
+list.addTail(new Node('B'))
+list.addTail(new Node('C'))
+list.addTail(new Node('D'))
+list.addTail(new Node('E'))
+list.addTail(new Node('F'))
+console.log(list)
