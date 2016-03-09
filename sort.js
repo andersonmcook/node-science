@@ -30,22 +30,35 @@ function bubbleSort (array) {
 }
 
 function insertionSort (array) {
-  for (let j = 1; j < array.length; j++) {
-    for(let i = 0; i < array.length - j; i++) {
-      if (array[i] > array[i + 1]) {
-        swap(array, i, i + 1)
-        console.log(chalk.yellow(util.inspect(array)))
-        while (array[i] < array[i - 1]) {
-          swap(array, i, i - 1)
-          i--
-          console.log(chalk.red(util.inspect(array)))
-        }
+  for(let i = 0; i < array.length - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      swap(array, i, i + 1)
+      console.log(chalk.yellow(util.inspect(array)))
+      while (array[i] < array[i - 1]) {
+        swap(array, i, i - 1)
+        i--
+        console.log(chalk.red(util.inspect(array)))
       }
     }
   }
   return array
 }
 
+function selectionSort (array) {
+  for (let j = 0; j < array.length; j++) {
+    for (let i = 0; i < array.length; i++) {
+      if (j === array[i]) {
+        swap(array, j, i)
+        console.log(chalk.red(util.inspect(array)))
+      }
+      // console.log(chalk.dim(util.inspect(array)))
+    }
+  }
+  return array
+}
+
 // console.log('bubbled', bubbleSort(arr))
-console.log(insertionSort(arr))
+// console.log(insertionSort(arr))
+console.log(selectionSort(arr))
+
 
