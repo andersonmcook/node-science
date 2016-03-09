@@ -1,0 +1,23 @@
+{
+  "name": "node-science",
+  "version": "1.0.0",
+  "description": "In class tutorial on different data structures",
+  "main": "dictionary-es5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersonmcook/node-science.git"
+  },
+  "author": "Anderson Cook <andersonmcook@gmail.com> (https://github.com/andersonmcook)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andersonmcook/node-science/issues"
+  },
+  "homepage": "https://github.com/andersonmcook/node-science#readme",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "lodash": "^4.6.1"
+  }
+}
