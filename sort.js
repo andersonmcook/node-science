@@ -69,7 +69,7 @@ function selectionSort (array) {
 function sortTimer (callback) {
   let x, y, i
   let counts = []
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < 100; i++) {
     const arr = [7,0,4,1,8,6,9,3,2,5]
     x = now()
     callback(arr)
@@ -77,7 +77,6 @@ function sortTimer (callback) {
     counts.push(parseFloat((y - x).toFixed(4)))
   }
   console.log(counts.reduce((a, b) => a + b))
-  // console.log(counts)
 }
 console.log("selectionSort")
 sortTimer(selectionSort)
