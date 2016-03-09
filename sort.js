@@ -61,16 +61,15 @@ function insertionSort (array) {
 // }
 
 function selectionSort (array) {
-  let i,j;
-  for (j = 0; j < array.length - 1; j++) {
-    console.log(chalk.red(util.inspect(array)))
+  for (let j = 0; j < array.length - 1; j++) {
+    console.log(chalk.yellow(util.inspect(array)))
     let minimum = j;
-    for ( i = j+1; i < array.length; i++) {
+    for (let i = j+1; i < array.length; i++) {
       if (array[i] < array[minimum]) {
         minimum = i;
       }
+      console.log(chalk.red(util.inspect(array)))
     }
-
     if(minimum != j) {
       swap(array, j, minimum);
     }
@@ -78,7 +77,7 @@ function selectionSort (array) {
   return array
 }
 
-// console.log('bubbled', bubbleSort(arr))
+// console.log(bubbleSort(arr))
 // console.log(insertionSort(arr))
 console.log(selectionSort(arr))
 
